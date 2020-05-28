@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using CliveKumara.CarwashManagement.Api.Middlewares;
 using CliveKumara.CarwashManagement.Api.Models.DatabaseModel;
+using CliveKumara.CarwashManagement.Api.Services.Concretes;
+using CliveKumara.CarwashManagement.Api.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -38,6 +41,8 @@ namespace CliveKumara.CarwashManagement.Api
             services.AddSwaggerGen(c =>
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Car Wash Api", Version = "V1" }));
 
+            services.AddTransient<ICategoryService, CategoryService>();
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -57,6 +62,9 @@ namespace CliveKumara.CarwashManagement.Api
             app.UseRouting();
 
             app.UseAuthorization();
+
+
+            app.UseMiddleware<ResponseDataMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {

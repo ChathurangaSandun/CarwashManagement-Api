@@ -4,14 +4,16 @@ using CliveKumara.CarwashManagement.Api.Models.DatabaseModel;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CliveKumara.CarwashManagement.Api.Migrations
 {
     [DbContext(typeof(CarWashManagementDbContext))]
-    partial class CarWashManagementDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200528160447_addshop2")]
+    partial class addshop2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -141,10 +143,6 @@ namespace CliveKumara.CarwashManagement.Api.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Hours")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Image")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -157,9 +155,7 @@ namespace CliveKumara.CarwashManagement.Api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("NumOfRate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasDefaultValue(0);
+                        .HasColumnType("int");
 
                     b.Property<string>("Phone")
                         .IsRequired()
@@ -175,24 +171,15 @@ namespace CliveKumara.CarwashManagement.Api.Migrations
                         .HasColumnType("float");
 
                     b.Property<double>("Rate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("float")
-                        .HasDefaultValue(0.0);
+                        .HasColumnType("float");
 
                     b.Property<string>("RateText")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<long>("ShopOwnerId")
-                        .HasColumnType("bigint");
 
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SubTitle")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TabSettings")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
@@ -212,79 +199,7 @@ namespace CliveKumara.CarwashManagement.Api.Migrations
                     b.HasIndex("LocationId")
                         .IsUnique();
 
-                    b.HasIndex("ShopOwnerId")
-                        .IsUnique();
-
                     b.ToTable("CWM.Shops");
-                });
-
-            modelBuilder.Entity("CliveKumara.CarwashManagement.Api.Models.Entities.ShopImage", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Path")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<long>("ShopId")
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ShopId");
-
-                    b.ToTable("CWM.ShopImage");
-                });
-
-            modelBuilder.Entity("CliveKumara.CarwashManagement.Api.Models.Entities.ShopOwner", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FullName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Photo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("Rate")
-                        .HasColumnType("float");
-
-                    b.Property<string>("Tag")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Url")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("CWM.ShopOwner");
                 });
 
             modelBuilder.Entity("CliveKumara.CarwashManagement.Api.Models.Entities.ShopService", b =>
@@ -316,21 +231,6 @@ namespace CliveKumara.CarwashManagement.Api.Migrations
                     b.HasOne("CliveKumara.CarwashManagement.Api.Models.Entities.Location", "Location")
                         .WithOne("Shop")
                         .HasForeignKey("CliveKumara.CarwashManagement.Api.Models.Entities.Shop", "LocationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CliveKumara.CarwashManagement.Api.Models.Entities.ShopOwner", "ShopOwner")
-                        .WithOne("Shop")
-                        .HasForeignKey("CliveKumara.CarwashManagement.Api.Models.Entities.Shop", "ShopOwnerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("CliveKumara.CarwashManagement.Api.Models.Entities.ShopImage", b =>
-                {
-                    b.HasOne("CliveKumara.CarwashManagement.Api.Models.Entities.Shop", "Shop")
-                        .WithMany("ShopImages")
-                        .HasForeignKey("ShopId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

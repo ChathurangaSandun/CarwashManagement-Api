@@ -4,8 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using CliveKumara.CarwashManagement.Api.Models.Common;
 using CliveKumara.CarwashManagement.Api.Models.DatabaseModel;
 using CliveKumara.CarwashManagement.Api.Models.Dtos;
+using CliveKumara.CarwashManagement.Api.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -16,17 +18,18 @@ namespace CliveKumara.CarwashManagement.Api.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase
     {
-        private readonly CarWashManagementDbContext _dbContext;
-        private readonly IMapper mapper;
+        private readonly ICategoryService _categoryService;
 
-        public CategoriesController(CarWashManagementDbContext dbContext, IMapper mapper)
+        public CategoriesController(ICategoryService categoryService)
         {
-            this._dbContext = dbContext;
-            this.mapper = mapper;
+            _categoryService = categoryService;
         }
 
         [HttpGet]
-        public async Task<List<CategoryDto>> Get() => 
-            this.mapper.Map<List<CategoryDto>>(await this._dbContext.Categories.Select(o => o).ToListAsync());
+        public async Task<ActionResult> Get() =>
+            Ok(new ResponseData<List<CategoryDto>> { Data = await _categoryService.GetAsync() });
+
     }
+
+
 }
