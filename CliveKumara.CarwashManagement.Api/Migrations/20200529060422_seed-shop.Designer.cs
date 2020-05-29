@@ -4,14 +4,16 @@ using CliveKumara.CarwashManagement.Api.Models.DatabaseModel;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CliveKumara.CarwashManagement.Api.Migrations
 {
     [DbContext(typeof(CarWashManagementDbContext))]
-    partial class CarWashManagementDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200529060422_seed-shop")]
+    partial class seedshop
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

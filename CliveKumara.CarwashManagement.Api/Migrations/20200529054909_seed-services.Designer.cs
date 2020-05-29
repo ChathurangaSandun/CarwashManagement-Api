@@ -4,14 +4,16 @@ using CliveKumara.CarwashManagement.Api.Models.DatabaseModel;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CliveKumara.CarwashManagement.Api.Migrations
 {
     [DbContext(typeof(CarWashManagementDbContext))]
-    partial class CarWashManagementDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200529054909_seed-services")]
+    partial class seedservices
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -61,34 +63,34 @@ namespace CliveKumara.CarwashManagement.Api.Migrations
                         {
                             Id = 1L,
                             Color = "#ff8a65",
-                            CreatedDate = new DateTime(2020, 5, 29, 14, 4, 21, 655, DateTimeKind.Local).AddTicks(8782),
+                            CreatedDate = new DateTime(2020, 5, 29, 13, 49, 8, 868, DateTimeKind.Local).AddTicks(2336),
                             Icon = "directions_car",
                             Image = "assets/images/banner3.jpg",
                             Name = "Car Wash",
                             Type = "CARWASH",
-                            UpdatedDate = new DateTime(2020, 5, 29, 14, 4, 21, 657, DateTimeKind.Local).AddTicks(4828)
+                            UpdatedDate = new DateTime(2020, 5, 29, 13, 49, 8, 869, DateTimeKind.Local).AddTicks(2039)
                         },
                         new
                         {
                             Id = 2L,
                             Color = "#5d6d7e",
-                            CreatedDate = new DateTime(2020, 5, 29, 14, 4, 21, 660, DateTimeKind.Local).AddTicks(526),
+                            CreatedDate = new DateTime(2020, 5, 29, 13, 49, 8, 870, DateTimeKind.Local).AddTicks(5090),
                             Icon = "directions_car",
                             Image = "assets/images/banner4.jpg",
                             Name = "Car Service",
                             Type = "CARSERVICE",
-                            UpdatedDate = new DateTime(2020, 5, 29, 14, 4, 21, 660, DateTimeKind.Local).AddTicks(575)
+                            UpdatedDate = new DateTime(2020, 5, 29, 13, 49, 8, 870, DateTimeKind.Local).AddTicks(5107)
                         },
                         new
                         {
                             Id = 3L,
                             Color = "#a569bd",
-                            CreatedDate = new DateTime(2020, 5, 29, 14, 4, 21, 660, DateTimeKind.Local).AddTicks(977),
+                            CreatedDate = new DateTime(2020, 5, 29, 13, 49, 8, 870, DateTimeKind.Local).AddTicks(5249),
                             Icon = "directions_car",
                             Image = "assets/images/banner5.jpg",
                             Name = "Car Parts",
                             Type = "CARPARTS",
-                            UpdatedDate = new DateTime(2020, 5, 29, 14, 4, 21, 660, DateTimeKind.Local).AddTicks(985)
+                            UpdatedDate = new DateTime(2020, 5, 29, 13, 49, 8, 870, DateTimeKind.Local).AddTicks(5251)
                         });
                 });
 
@@ -126,31 +128,31 @@ namespace CliveKumara.CarwashManagement.Api.Migrations
                         {
                             Id = 1L,
                             Address = "Nugegoda",
-                            CreatedDate = new DateTime(2020, 5, 29, 6, 4, 21, 660, DateTimeKind.Utc).AddTicks(4924),
+                            CreatedDate = new DateTime(2020, 5, 29, 5, 49, 8, 870, DateTimeKind.Utc).AddTicks(8118),
                             Lat = 79.86965f,
                             Long = 6.864756f,
                             Name = "Echo Zone - 3M Tint",
-                            UpdatedDate = new DateTime(2020, 5, 29, 6, 4, 21, 660, DateTimeKind.Utc).AddTicks(4934)
+                            UpdatedDate = new DateTime(2020, 5, 29, 5, 49, 8, 870, DateTimeKind.Utc).AddTicks(8122)
                         },
                         new
                         {
                             Id = 2L,
                             Address = "Colombo 6",
-                            CreatedDate = new DateTime(2020, 5, 29, 6, 4, 21, 660, DateTimeKind.Utc).AddTicks(5331),
+                            CreatedDate = new DateTime(2020, 5, 29, 5, 49, 8, 870, DateTimeKind.Utc).AddTicks(8339),
                             Lat = 79.86487f,
                             Long = 6.87702f,
                             Name = "Alpine Car Wash",
-                            UpdatedDate = new DateTime(2020, 5, 29, 6, 4, 21, 660, DateTimeKind.Utc).AddTicks(5333)
+                            UpdatedDate = new DateTime(2020, 5, 29, 5, 49, 8, 870, DateTimeKind.Utc).AddTicks(8340)
                         },
                         new
                         {
                             Id = 3L,
                             Address = "Colombo",
-                            CreatedDate = new DateTime(2020, 5, 29, 6, 4, 21, 660, DateTimeKind.Utc).AddTicks(5371),
+                            CreatedDate = new DateTime(2020, 5, 29, 5, 49, 8, 870, DateTimeKind.Utc).AddTicks(8366),
                             Lat = 79.79967f,
                             Long = 6.864813f,
                             Name = "Staford motors ",
-                            UpdatedDate = new DateTime(2020, 5, 29, 6, 4, 21, 660, DateTimeKind.Utc).AddTicks(5373)
+                            UpdatedDate = new DateTime(2020, 5, 29, 5, 49, 8, 870, DateTimeKind.Utc).AddTicks(8367)
                         });
                 });
 
@@ -183,26 +185,26 @@ namespace CliveKumara.CarwashManagement.Api.Migrations
                         new
                         {
                             Id = 1L,
-                            CreatedDate = new DateTime(2020, 5, 29, 6, 4, 21, 660, DateTimeKind.Utc).AddTicks(7530),
+                            CreatedDate = new DateTime(2020, 5, 29, 5, 49, 8, 870, DateTimeKind.Utc).AddTicks(9919),
                             Icon = "",
                             Title = "Wash",
-                            UpdatedDate = new DateTime(2020, 5, 29, 6, 4, 21, 660, DateTimeKind.Utc).AddTicks(7536)
+                            UpdatedDate = new DateTime(2020, 5, 29, 5, 49, 8, 870, DateTimeKind.Utc).AddTicks(9923)
                         },
                         new
                         {
                             Id = 2L,
-                            CreatedDate = new DateTime(2020, 5, 29, 6, 4, 21, 660, DateTimeKind.Utc).AddTicks(7792),
+                            CreatedDate = new DateTime(2020, 5, 29, 5, 49, 8, 871, DateTimeKind.Utc).AddTicks(90),
                             Icon = "",
                             Title = "Vax",
-                            UpdatedDate = new DateTime(2020, 5, 29, 6, 4, 21, 660, DateTimeKind.Utc).AddTicks(7795)
+                            UpdatedDate = new DateTime(2020, 5, 29, 5, 49, 8, 871, DateTimeKind.Utc).AddTicks(92)
                         },
                         new
                         {
                             Id = 3L,
-                            CreatedDate = new DateTime(2020, 5, 29, 6, 4, 21, 660, DateTimeKind.Utc).AddTicks(7827),
+                            CreatedDate = new DateTime(2020, 5, 29, 5, 49, 8, 871, DateTimeKind.Utc).AddTicks(116),
                             Icon = "",
                             Title = "Full Body",
-                            UpdatedDate = new DateTime(2020, 5, 29, 6, 4, 21, 660, DateTimeKind.Utc).AddTicks(7829)
+                            UpdatedDate = new DateTime(2020, 5, 29, 5, 49, 8, 871, DateTimeKind.Utc).AddTicks(117)
                         });
                 });
 
@@ -309,80 +311,6 @@ namespace CliveKumara.CarwashManagement.Api.Migrations
                         .IsUnique();
 
                     b.ToTable("CWM.Shops");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1L,
-                            Address = "Nugegoda",
-                            CategoryId = 1L,
-                            CreatedDate = new DateTime(2020, 5, 29, 6, 4, 21, 662, DateTimeKind.Utc).AddTicks(7095),
-                            Description = "Loresipsm",
-                            Hour = "9-6",
-                            Hours = "{}",
-                            Image = "",
-                            LocationId = 1L,
-                            Mobile = "0718256773",
-                            NumOfRate = 0,
-                            Phone = "0718256773",
-                            PriceRangeStart = 250.0,
-                            PriceRangeStop = 6500.0,
-                            Rate = 0.0,
-                            ShopOwnerId = 1L,
-                            Status = "Featured",
-                            SubTitle = "Echo Zone - 3M Tint",
-                            TabSettings = "{}",
-                            Title = "Echo Zone - 3M Tint",
-                            UpdatedDate = new DateTime(2020, 5, 29, 6, 4, 21, 662, DateTimeKind.Utc).AddTicks(7115)
-                        },
-                        new
-                        {
-                            Id = 2L,
-                            Address = "Colombo 6",
-                            CategoryId = 1L,
-                            CreatedDate = new DateTime(2020, 5, 29, 6, 4, 21, 662, DateTimeKind.Utc).AddTicks(7993),
-                            Description = "Loresipsm",
-                            Hour = "9-6",
-                            Hours = "{}",
-                            Image = "",
-                            LocationId = 2L,
-                            Mobile = "0718256773",
-                            NumOfRate = 0,
-                            Phone = "0718256773",
-                            PriceRangeStart = 250.0,
-                            PriceRangeStop = 6500.0,
-                            Rate = 0.0,
-                            ShopOwnerId = 2L,
-                            Status = "Featured",
-                            SubTitle = "Alpine Car Wash",
-                            TabSettings = "{}",
-                            Title = "Alpine Car Wash",
-                            UpdatedDate = new DateTime(2020, 5, 29, 6, 4, 21, 662, DateTimeKind.Utc).AddTicks(7999)
-                        },
-                        new
-                        {
-                            Id = 3L,
-                            Address = "Colombo",
-                            CategoryId = 1L,
-                            CreatedDate = new DateTime(2020, 5, 29, 6, 4, 21, 662, DateTimeKind.Utc).AddTicks(8056),
-                            Description = "Loresipsm",
-                            Hour = "9-6",
-                            Hours = "{}",
-                            Image = "",
-                            LocationId = 3L,
-                            Mobile = "0718256773",
-                            NumOfRate = 0,
-                            Phone = "0718256773",
-                            PriceRangeStart = 250.0,
-                            PriceRangeStop = 6500.0,
-                            Rate = 0.0,
-                            ShopOwnerId = 3L,
-                            Status = "Featured",
-                            SubTitle = "Staford motors ",
-                            TabSettings = "{}",
-                            Title = "Staford motors ",
-                            UpdatedDate = new DateTime(2020, 5, 29, 6, 4, 21, 662, DateTimeKind.Utc).AddTicks(8058)
-                        });
                 });
 
             modelBuilder.Entity("CliveKumara.CarwashManagement.Api.Models.Entities.ShopImage", b =>
@@ -452,35 +380,6 @@ namespace CliveKumara.CarwashManagement.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CWM.ShopOwner");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1L,
-                            CreatedDate = new DateTime(2020, 5, 29, 6, 4, 21, 660, DateTimeKind.Utc).AddTicks(9849),
-                            FullName = "Chathuranga",
-                            Photo = "",
-                            Rate = 0.0,
-                            UpdatedDate = new DateTime(2020, 5, 29, 6, 4, 21, 660, DateTimeKind.Utc).AddTicks(9854)
-                        },
-                        new
-                        {
-                            Id = 2L,
-                            CreatedDate = new DateTime(2020, 5, 29, 6, 4, 21, 661, DateTimeKind.Utc).AddTicks(91),
-                            FullName = "sandun",
-                            Photo = "",
-                            Rate = 0.0,
-                            UpdatedDate = new DateTime(2020, 5, 29, 6, 4, 21, 661, DateTimeKind.Utc).AddTicks(94)
-                        },
-                        new
-                        {
-                            Id = 3L,
-                            CreatedDate = new DateTime(2020, 5, 29, 6, 4, 21, 661, DateTimeKind.Utc).AddTicks(124),
-                            FullName = "kumara",
-                            Photo = "",
-                            Rate = 0.0,
-                            UpdatedDate = new DateTime(2020, 5, 29, 6, 4, 21, 661, DateTimeKind.Utc).AddTicks(126)
-                        });
                 });
 
             modelBuilder.Entity("CliveKumara.CarwashManagement.Api.Models.Entities.ShopService", b =>

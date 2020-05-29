@@ -29,13 +29,35 @@ namespace CliveKumara.CarwashManagement.Api.Models.DatabaseModel
             }
 
             modelBuilder.Entity<ShopService>()
-                    .HasKey(c => new { c.ServiceId, c.ShopId});
+                    .HasKey(c => new { c.ServiceId, c.ShopId });
 
 
             modelBuilder.Entity<Shop>()
                     .Property(c => c.NumOfRate).HasDefaultValue(default(int));
             modelBuilder.Entity<Shop>()
                  .Property(c => c.Rate).HasDefaultValue(default(int));
+
+            modelBuilder.Seed();
+
+        }
+
+        public override int SaveChanges()
+        {
+            var AddedEntities = ChangeTracker.Entries<Entity>().Where(E => E.State == EntityState.Added).ToList();
+
+            AddedEntities.ForEach(E =>
+            {
+                E.Entity.CreatedDate = DateTime.UtcNow;
+            });
+
+            var ModifiedEntities = ChangeTracker.Entries<Entity>().Where(E => E.State == EntityState.Modified).ToList();
+
+            ModifiedEntities.ForEach(E =>
+            {
+                E.Entity.UpdatedDate = DateTime.UtcNow;
+            });
+
+            return base.SaveChanges();
         }
     }
 }

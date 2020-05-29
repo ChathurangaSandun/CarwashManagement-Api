@@ -12,7 +12,7 @@ namespace CliveKumara.CarwashManagement.Api.AutoMapperProfiles
     {
         public AutoMapping()
         {
-            CreateMap<Category, CategoryDto>().ReverseMap(); // means you want to map from User to UserDTO
+            CreateMap<Category, CategoryDto>().ReverseMap(); 
         }
 
     }
